@@ -2,5 +2,11 @@ spring:
   application:
     name: Book Evaluation
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 server:
-  port: 9991
+  port: 0
