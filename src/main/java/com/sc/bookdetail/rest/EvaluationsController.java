@@ -13,21 +13,10 @@ public class EvaluationsController {
 
     @GetMapping("/evaluations/{isbn}")
     List<Evaluation> find(@PathVariable("isbn") String isbn) {
+        System.out.println("Received request!");
         if (isbn.equals("12345")) {
             return asList(new Evaluation("Great Book!"));
         }
         return asList(new Evaluation("Amazing :)"), new Evaluation("Must Read!"));
-    }
-    private class Evaluation {
-
-        private String text;
-
-        public Evaluation(String text) {
-            this.text = text;
-        }
-
-        public String getText() {
-            return text;
-        }
     }
 }
